@@ -77,7 +77,7 @@
               <li>Get qualified industry professionals evaluations</li>
             </ul>
             <center>
-              <a href="homes"><input class="nb" type="button" value="Login/SignUp" ></a>
+              <a href="discover"><input class="nb" type="button" value="Login/SignUp" ></a>
             </center>
           </div>    
         </section>

@@ -21,25 +21,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link page-scroll " href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll " href="getconnected">Home <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link page-scroll"  href="about">Media Production</a>
-              </li>
-        
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle  " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Expeiria Programs </a>
-                
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item text-dark" href="creative">  Creative Insight Project</a>
-                  <a class="dropdown-item text-dark" href="programs">Expeiria Programs</a>
-                  <a class="dropdown-item text-dark" href="insight"> Creative Strategic Advisor</a>
-              </li>
-                  
-              <li class="nav-item">
-                <a class="nav-link page-scroll "  data-toggle="modal" data-target="#exampleModalLong">Contact</a>
-              </li>
+              
               <li>
                 <a class="nav-link page-scroll text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                    {{ __('Logout') }}
@@ -62,8 +46,8 @@
         <div class="container">
                   <!-- Authentication Links -->
                   @guest
-                      <div><a href="{{ route('login') }}">{{ __('Login') }}</a></div>
-                      <div><a href="{{ route('register') }}">{{ __('Register') }}</a></div>
+                      <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
+                      
                   @else
                   <!-- <div class="card">
                      <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div>

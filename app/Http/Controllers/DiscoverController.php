@@ -23,6 +23,6 @@ class DiscoverController extends Controller
      */
     public function index()
     {
-        return view('homes');
+        return view('discover');
     }
 }

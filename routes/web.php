@@ -31,9 +31,12 @@ Route::get('/discovered', 'experiaController@discovered');
 Route::get('/redirect', 'FacebookController@redirect');
 Route::get('/callback', 'FacebookController@callback');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/connected', 'HomeController@index')->name('getconnected');
 
-Auth::routes('http://localhost:8000/homes');
-Route::get('/homes', 'DiscoverController@index')->name('homes');
+Auth::routes('http://localhost:8000/discover');
+Route::get('/discover', 'DiscoverController@index')->name('discover');
+Route::get('/programs', 'experiaController@program')->name('programs');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+//for facebook login
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
