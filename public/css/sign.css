@@ -1,0 +1,119 @@
+/*css for modular sign up*/
+.optin-container {
+  /* box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
+  width: 30rem;
+}
+
+.coptin-container {
+ 
+  width: 30rem;
+}
+
+.cta {
+  background: #E52B50;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .cta {
+    line-height: 1.4;
+    padding: 1.25rem 1rem;
+  }
+}
+
+form#a {
+  background: #9C2542;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  margin: 0;
+}
+form input {
+  padding: 0.75rem;
+  margin: 0;
+}
+form input[type="email"] {
+  border: solid;
+  font-size: 1rem;
+  flex: 1;
+  
+}
+
+form input[type="submit"] {
+  background: linear-gradient(#e84263, #e52b50);
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+  padding: 0 3rem;
+  transition: all 0.25s ease-in-out;
+}
+form input[type="submit"]:hover {
+  background: linear-gradient(#ca093056, #d4062f5b);
+}
+@media screen and (max-width: 600px) {
+  form {
+    flex-flow: row wrap;
+  }
+  form input {
+    padding: 1rem !important;
+    margin: 0 !important;
+    flex: 100%;
+  }
+  form input[type="submit"] {
+    margin-top: 1rem !important;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.ctc {
+  background: hsl(17, 90%, 24%);
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-size: 2rem;
+  line-height: 1;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .ctc {
+    line-height: 1.4;
+    padding: 1.25rem 1rem;
+  }
+}
+
+form#c {
+  background: rgb(5, 10, 10);
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+  margin: 0;
+}
+
+form input#c[type="submit"] {
+  background: linear-gradient(hsl(17, 90%, 24%), hsl(17, 90%, 24%));
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  margin: 0 0 0 1rem;
+  padding: 0 3rem;
+  transition: all 0.25s ease-in-out;
+}
+form input#c[type="submit"]:hover {
+  background: linear-gradient(hsla(248, 27%, 6%, 0.522), hsla(260, 43%, 1%, 0.281));
+}

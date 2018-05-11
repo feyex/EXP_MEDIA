@@ -1,0 +1,488 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'FiraSans';
+    background-color: white;
+    font-size:1.2rem;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 35px;
+  text-transform: uppercase;
+  font-family:'FiraSans';
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+  outline: none;
+}
+a {
+  color: rgb(211, 48, 48);
+}
+a:hover,
+a:focus,
+a:active,
+a.active {
+  color: #fff;
+}
+
+p {
+  margin: 0 0 25px;
+  /*font-size: 15px;*/
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  p {
+    margin: 0 0 35px;
+    /*font-size: 20px;*/
+    line-height: 1.6;
+  }
+}
+
+/* Custom Button Styles */
+
+.btn-dark {
+    color: #fff;
+    border-color: crimson;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .7);
+  }
+  
+  .btn-light {
+    color: #333;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .btn-light:hover, .btn-light:focus, .btn-light:active {
+    color: #333;
+    background-color: rgba(255, 255, 255, .8);
+  }
+
+ 
+
+  
+  /* Nav Bar Custom */
+  .navbar-custom {
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    font-family: "FiraSans";
+    background-color: black;
+    padding-top: 2rem;
+  }
+  .navbar-custom .navbar-toggle {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-size: 12px;
+    
+  }
+  .navbar-custom .navbar-toggle:focus,
+  .navbar-custom .navbar-toggle:active {
+    outline: none;
+  }
+  .navbar-custom .navbar-brand {
+    font-weight: 500;
+    margin-top:2px;
+  }
+  .navbar-custom .navbar-brand:focus {
+    outline: none;
+  }
+  .navbar-custom a {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-custom .nav li a {
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background 0.3s ease-in-out;
+  }
+  .navbar-custom .nav li a:hover {
+    color: white;
+    outline: none;
+    background-color: transparent;
+  }
+  .navbar-custom .nav li a:focus,
+  .navbar-custom .nav li a:active {
+    outline: none;
+    background-color: transparent;
+  }
+  .navbar-custom .nav li.active {
+    outline: none;
+  }
+  .navbar-custom .nav li.active a {
+    background-color: white;
+  }
+  .navbar-custom .nav li.active a:hover {
+    color: white;
+  }
+  @media (min-width: 768px) {
+    .navbar-custom {
+      /*padding: 20px 0;*/
+      color: aliceblue;
+      border-bottom: none;
+      letter-spacing: 1px;
+      background: transparent;
+      -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+      -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+      transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+    }
+    .navbar-custom.top-nav-collapse {
+      padding: 12px;
+      background: black;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    }
+  }
+  
+  /* Custom Horizontal Rule */
+  
+  hr.small {
+    max-width: 100px;
+  }
+
+.text-vertical-center {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .text-vertical-center h1 {
+    font-size: 4.5em;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+  }
+
+  form{
+    width: 100%;
+  }
+
+  header {
+    background-image: url(../img/richie.png);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: white;
+  }
+  header .intro-text {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  header .intro-text .intro-lead-in {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 22px;
+    margin-bottom: 25px;
+  }
+  header .intro-text .intro-heading {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 50px;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 768px) {
+    header .intro-text {
+      padding-top: 350px;
+      padding-bottom: 200px;
+    }
+    header .intro-text .intro-lead-in {
+      font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-style: italic;
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 25px;
+    }
+    header .intro-text .intro-heading {
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 75px;
+      line-height: 75px;
+      margin-bottom: 50px;
+    }
+  }
+   
+  .welcome {
+    margin-top: -150px;
+    font-size: 2.5rem;
+    font-weight: 800;
+  }
+  
+  .content-section {
+    padding: 70px 0;
+    margin-top: -1rem;
+  }
+
+  .new{
+      color: rgb(10, 10, 10);
+      font-weight: 900;
+  }
+
+  .total {
+    position: relative;
+    background-color: #343a40;
+    background: url("../img/media.png") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem; 
+  }
+
+  .total1 {
+    position: relative;
+    background-color: #0d0d0e;
+   /* background: url("../img/.jpg") no-repeat center center;*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem; 
+  }
+  .na{
+      float: right;
+  }
+
+  .modal-header{
+      color:red;
+      opacity: 0.3;
+     
+  }
+
+  .modal-body{
+    opacity: 0.4;
+}
+
+.nb{
+  
+  border-radius: 20px;
+  border-color: darkred;
+  color: darkred;
+}
+
+.insight{
+  position: relative;
+    background-color: #ae93262f;
+    height: 80%;
+    width: 100%;
+    padding-top: 3rem;
+    padding-bottom: 2rem; 
+}
+
+.insight1{
+  position: relative;
+    background-color:whitesmoke;
+    height: 90%;
+    width: 100%;
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    
+  
+}
+
+.insight2{
+  position: relative;
+    background-color: #0d0d0e;
+    background: url("../img/banner.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 8rem;
+    padding-bottom: 8rem; 
+  }
+
+  .insight3{
+    height: 90%;
+    width: 100%;
+    position: relative;
+    background-color: #0d0d0e;
+    background: url("../img/header.jpg") no-repeat center center;
+    background-size: cover;
+    padding-top: 4rem;
+    padding-bottom: 3rem; 
+      
+    
+  }
+  
+
+.rule{
+  padding-bottom: 2.0rem;
+}
+
+.rul {
+  margin-top: 0rem;
+  margin-bottom: 4rem;
+  border: 0;
+  border-top: 3px solid rgba(211, 2, 2, 0.1);
+  width: 175px;
+}
+
+.medi{
+    position: relative;
+    background-color: #0d0d0e;
+    background: url("../img/bg.jpg") no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top: 3rem;
+    padding-bottom: 3rem; 
+  }
+
+  .inquire{
+    max-width:50%;
+    background-color:white;
+    align-self:center;
+    opacity: 0.5;
+  }
+
+  .cls{
+    padding-top:2rem;
+  }
+
+  .inquire1{
+    max-width:50%;
+    background-color:rgb(133, 128, 127);
+    opacity: 0.5;
+  }
+
+/*Section resposible for text transformation /fading*/
+  div.exp {
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+  }
+  
+  div.exp:first-of-type {    /* For increasing performance 
+                         ID/Class should've been used. 
+                         For a small demo 
+                         it's okaish for now */
+    animation: showup 7s infinite;
+  }
+  
+ p div.exp:last-of-type {
+    width:0px;
+    animation: reveal 7s infinite;
+  }
+  
+ div.exp:last-of-type {
+    margin-left:-355px;
+    animation: slidein 7s infinite;
+  }
+  
+  @keyframes showup {
+      0% {opacity:0;}
+      20% {opacity:1;}
+      80% {opacity:1;}
+      100% {opacity:0;}
+  }
+  
+  @keyframes slidein {
+      0% { margin-left:-500px; }
+      20% { margin-left:-500px; }
+      35% { margin-left:0px; }
+      100% { margin-left:0px; }
+  }
+  
+  @keyframes reveal {
+      0% {opacity:0;width:0px;}
+      20% {opacity:1;width:0px;}
+      30% {width:355px;}
+      80% {opacity:1;}
+      100% {opacity:0;width:355px;}
+  }
+  
+  .mage{
+    width: 650px;
+    height: 540px;
+  }
+
+  @font-face {
+    font-family: 'FiraSans';
+    src: url('fontawesome/FiraSans.eot'); 
+    src:url('fontawesome/FiraSans.otf') ;
+    src:url('fontawesome/FiraSans.ttf') ; 
+
+    /* font-family: 'Lato';
+    src: url('fontawesome/Lato.eot'); 
+    src:url('fontawesome/Lato.otf') ;
+    src:url('fontawesome/Lato.ttf') ; 
+
+    font-family: 'OpenSans';
+    src: url('fontawesome/OpenSans.eot'); 
+    src:url('fontawesome/OpenSans.otf') ;
+    src:url('fontawesome/OpenSans.ttf') ;  */
+    
+  
+}
+.crite{
+  height: 70%;
+  width: 100%;
+  position: relative;
+  background-color: #0d0d0e;
+  background: url("../img/header.jpg") no-repeat center center;
+  background-size: cover;
+  padding-top: 4rem;
+  padding-bottom: 3rem; 
+}
+
+.v{
+  background-color:#333;
+  padding-top: 40px;
+  color:whitesmoke;
+  margin-right: -0.9rem;
+  padding-top: 8rem;
+}
+
+.va{
+  background-color:beige;
+  color:black;
+  margin-left: -0.9rem;
+  padding-top: 8rem;
+}
+
+.mag {
+  height: 70%;
+  width: 70%;
+}
+
+.mags {
+  height: 60%;
+  width: 70%;
+  margin-left:-8rem;
+}
