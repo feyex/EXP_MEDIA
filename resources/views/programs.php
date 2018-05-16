@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link page-scroll " href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll " href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll"  href="about">Media Production</a>
@@ -97,9 +97,9 @@
           <div class="container text-left">
             <h1 class="text-center">Become Original</h1>
             <hr class="rul"/>
-            <p>Our program is designed to help numerous screenplays, books, concepts, reality shows, documentaries, and branded entertainment projects get set up with producers, sold, made or distributed. And the coolest part is that you only make the decision and sign agreement about the development of your projects to your satisfaction. You’re more likely to retain a higher degree of ownersh</p>
+            <p>Our program is designed to help numerous screenplays, books, concepts, reality shows, documentaries, and branded entertainment projects get set up with producers, sold, made or distributed. And the coolest part is that you only make the decision and sign agreement about the development of your projects to your satisfaction. You’re more likely to retain a higher degree of ownership</p>
             <center>
-              <input  class="nb" type="button" value="Start Here">
+              <a href="become" ><input  class="nb" type="button" value="Start Here"></a>
             </center>
           </div>    
         </section>

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
  <head>
-  <title>EXPEIRIA MEDIA </title>
+    <title>EXPEIRIA MEDIA </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
     <script src="vendor/fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
@@ -45,11 +45,16 @@
     </nav>
 
     
-    <section class="discover content-section">
-      <div class="container">
-        
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="./img/pro-industryPro11.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="./img/pro-premium-Generic1.jpg" alt="Second slide">
+        </div>
       </div>
-    </section>
+    </div>
 
     <section class="content-section">
       <div class="container">
@@ -66,66 +71,7 @@
           <li>Upload HD profile photo</li>
           <li>Get qualified industry professionals evaluations</li>
         </ul>
-        <div class="row">
-          <div class="optin-container col-sm col-md-6">
-            <div class="cta">Sign Up</div>
-              <form method="POST" action="{{ route('register') }}" class=" a form hidden">
-                    @csrf
-              
-                <!-- echo '<script type="text/javascript">alert("Please Try Again")</script>' ; -->
-                <div class="form-row text-center">
-                  <div class="col">
-                    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-                    <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                      @if ($errors->has('name'))
-                          <span class="invalid-feedback">
-                              <strong>{{ $errors->first('name') }}</strong>
-                          </span>
-                      @endif
-                    <!-- {{ Form:: text('username', '', array("class" => "form-control", 'placeholder' => '')) }} -->
-                  </div>
-                  <div class="col">
-                    <label for="email" class="col-form-label text-center text-danger">{{ __('E-Mail Address') }}</label>
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                      @if ($errors->has('email'))
-                          <span class="invalid-feedback">
-                              <strong>{{ $errors->first('email') }}</strong>
-                          </span>
-                      @endif
-                    <!-- {{ Form:: email('email', '', array("class" => "form-control", 'placeholder' => 'johndoe@gmail.com')) }} -->
-                  </div>
-                </div>
-                <div class="form-row text-center">
-                    <div class="col">
-                      <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-                      <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                        @if ($errors->has('password'))
-                            <span class="invalid-feedback">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                        @endif
-                      <!-- {{ Form:: password('password', array('class' => 'form-control')) }} -->
-                    </div>
-                    <div class="col">
-                      <label for="password-confirm" class="col-form-label text-center text-danger">{{ __('Confirm Password') }}</label>
-                      <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                    </div>
-                </div>
-                  &nbsp;
-                  <div class="text-center ">
-                    {{ Form::submit('SignUp', array('class' => 'submit_btn', 'id' => 'submit_id')) }}
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-4">
-                            <a href="{!! url('auth/facebook') !!}" class="btn btn-primary btn-block">
-                                Login with facebook
-                            </a>
-                        </div>
-                    </div>
-                  </div>
-                  
-            </form>
-            </div>
-            
+        <div class="row">               
           <div class="coptin-container col-sm col-md-6">
             <div class="ctc">Log-in</div>
             <form method="POST" action="{{ route('login') }}" class=" c form hidden">
@@ -163,9 +109,9 @@
     </section>
 
     <footer>
-        <nav class="navbar navbar-light text-center" style="background-color: black;">
-            <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-        </nav>
+      <nav class="navbar navbar-light text-center" style="background-color: black;">
+          <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
+      </nav>
     </footer>
           
     <!--MODAL CLASS -->
@@ -197,16 +143,15 @@
         </div>
       </div>
     </div>
-                      
+            
+          
     <script type="text/javascript" >
       window.FontAwesomeConfig = {
         searchPseudoElements: true,
       }
     </script>
-    
     <script src="vendor/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.js"></script>
     <script src="js/expieria.js"></script>
-
   </body>
 </html>
