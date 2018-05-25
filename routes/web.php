@@ -21,10 +21,11 @@ Route::get('/programs', 'experiaController@program');
 Route::post('/ins', 'InsightController@ins');
 Route::get('/discovered', 'experiaController@discovered');
 
-Route::get('/become', 'experiaController@become');
+Route::get('become', 'BecomeController@index')->name('become');
+Route::post('become/original', 'BecomeController@store')->name('become.store');
 
 Auth::routes('/discover');
-Route::get('discover', 'DiscoverController@index');
+Route::get('discover', 'DiscoverController@index')->name('discover');
 Route::get('/programs', 'experiaController@program')->name('programs');
 Route::get('logout', 'Auth\LoginController@logout');
 

@@ -13,6 +13,6 @@ class DiscoverController extends Controller
      */
     public function index()
     {
-        return view('discover');
+        return view('discover')->with('name', 'discover');
     }
 }

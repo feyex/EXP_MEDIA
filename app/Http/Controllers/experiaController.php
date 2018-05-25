@@ -14,11 +14,6 @@ class experiaController extends Controller
       return view('index');
     }
 
-    public function become() { 
-
-      return view('become');
-    }
-
     public function about()
     {
         return view('about');
