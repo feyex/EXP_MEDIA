@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Socialite;
+use Log;
 use Auth;
 use Exception;
 
@@ -29,27 +31,42 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/discover';
-    protected $redirectsTo = '/professional';
+    protected function authenticated(Request $request)
+    {
+        $currentPathName = $request->input('invisible');
+
+        if ($currentPathName == 'discover') {
+            
+            return redirect('/discover');
+        } else 
+            if ($currentPathName == 'become') {
+        
+                return redirect('/become');
+            }
+
+    }
+    
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function logout(Request $request) {
-        Auth::logout();
-        return redirect('/discover');
-      }
-
-      public function logouts(Request $request) {
-        Auth::logout();
-        return redirect('/professional');
-      }
+    public function logouts(Request $request) {
+    Auth::logout();
+    return redirect('/professional');
+    }
 
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('guest')->except('logouts');
+    }
+    
+
+    public function logout() {
+
+        Auth::logout();
+        return redirect('/');
     }
 
 

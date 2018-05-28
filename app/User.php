@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+    /**
+     * Become Original Relationships.
+     *
+     * @var array
+     */
+    public function projects()
+    {
+        return $this->hasMany('App\Become');
+    }
+
 }

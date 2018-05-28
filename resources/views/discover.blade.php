@@ -20,7 +20,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link page-scroll " href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll " href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll"  href="about">Media Production</a>
@@ -45,11 +45,11 @@
     </nav>
 
     
-        <section class="discover content-section">
-          <div class="container">
-            
-          </div>
-        </section>
+    <section class="discover content-section">
+      <div class="container">
+        
+      </div>
+    </section>
 
         <section class="content-section">
           <div class="container">
@@ -123,87 +123,89 @@
                      
                 </form>
                 </div>
-                
-              <div class="coptin-container col-sm col-md-6">
-                <div class="ctc">Log-in</div>
-                <form method="POST" action="{{ route('login') }}" class=" c form hidden">
-                        @csrf
-                <div class="form-row text-center">
-                  <div class="col">
-                    <label class="col-form-label  text-danger" for="formGroupExampleInput">Email Address</label>
-                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-                      @if ($errors->has('email'))
-                          <span class="invalid-feedback">
-                              <strong>{{ $errors->first('email') }}</strong>
-                          </span>
-                      @endif
-                        
-                  </div>
-                  <div class="col">
-                    <label class="col-form-label  text-danger" for="formGroupExampleInput2">Password</label>
-                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                      @if ($errors->has('password'))
-                          <span class="invalid-feedback">
-                              <strong>{{ $errors->first('password') }}</strong>
-                          </span>
-                      @endif
-                  </div>
-                </div>
-                  &nbsp;
-                  <div class="text-center">
-                    {{ Form::submit('Log-in', array('class' => 'submit_btn', 'id' => 'c')) }}
-                  </div>
-                  {{ Form:: close() }} 
-                </div>
+              
+            
+          <div class="coptin-container col-sm col-md-6">
+            <div class="ctc">Log-in</div>
+            <form method="POST" action="{{ route('login') }}" class=" c form hidden">
+                    @csrf
+            <div class="form-row text-center">
+              <div class="col">
+                <label class="col-form-label  text-danger" for="formGroupExampleInput">Email Address</label>
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                  @if ($errors->has('email'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
+                    
+              </div>
+              <div class="col">
+                <label class="col-form-label  text-danger" for="formGroupExampleInput2">Password</label>
+                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                  @if ($errors->has('password'))
+                      <span class="invalid-feedback">
+                          <strong>{{ $errors->first('password') }}</strong>
+                      </span>
+                  @endif
               </div>
             </div>
-          </div>
-        </section>
-
-        <footer>
-            <nav class="navbar navbar-light text-center" style="background-color: black;">
-                <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-            </nav>
-        </footer>
-          
-        <!--MODAL CLASS -->
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content bg-secondary">
-              <div class="modal-header text-center">
-                <center> <h5 class="modal-title text-centre" id="exampleModalLongTitle">Contact Us</h5></center>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
+              &nbsp;
+              <div class="text-center">
+                {{ Form::submit('Log-in', array('class' => 'submit_btn', 'id' => 'c')) }}
               </div>
-              <div class="modal-body">
-                <form role="form">
-                  <div class="form-group ">
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Subject">
-                  </div>
-                    <textarea class="form-control na" rows="3"></textarea>
-                  </div>
-                    <button type="button" class="btn btn-default">Send</button>
-                </form>
-              </div>
+              {{ Form:: close() }} 
+            </div>
           </div>
         </div>
       </div>
-            
+    </section>
+
+    <footer>
+        <nav class="navbar navbar-light text-center" style="background-color: black;">
+            <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
+        </nav>
+    </footer>
           
-           <script type="text/javascript" >
-              window.FontAwesomeConfig = {
-                searchPseudoElements: true,
-              }
-          </script>
-          <script src="vendor/jquery.min.js"></script>
-          <script src="vendor/bootstrap/js/bootstrap.js"></script>
-          <script src="js/expieria.js"></script>
-        </body>
-      </html>
+    <!--MODAL CLASS -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content bg-secondary">
+            <div class="modal-header text-center">
+              <center> <h5 class="modal-title text-centre" id="exampleModalLongTitle">Contact Us</h5></center>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group ">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Subject">
+                </div>
+                  <textarea class="form-control na" rows="3"></textarea>
+                </div>
+                  <button type="button" class="btn btn-default">Send</button>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+                      
+    <script type="text/javascript" >
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true,
+      }
+    </script>
+    
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="js/expieria.js"></script>
+
+  </body>
+</html>

@@ -9,9 +9,9 @@ use Log;
 class experiaController extends Controller
 {
     //
-    public function home()
-    {
-        return view('index');
+    public function home() { 
+
+      return view('index');
     }
 
     public function about()
@@ -39,10 +39,7 @@ class experiaController extends Controller
         return view('discovered');
     }
 
-    public function save(Request $request)
-    {
-        //
-        Log::info("I am getting called");
+    public function save(Request $request) {
 
         $this->validate($request, ['name' => 'required']);
         $this->validate($request, ['email' => 'required']);
@@ -70,18 +67,13 @@ class experiaController extends Controller
             
         ]);
         
-        Log::info('I am tweet' . $link);
-
         return $link;
          
     
     }
 
-    public function ins(Request $request)
-    {
-        //
-      //  Log::info("I am getting called");
-
+    public function ins(Request $request) {
+        
         $this->validate($request, ['name' => 'required']);
         $this->validate($request, ['email' => 'required']);
         $this->validate($request, ['project' => 'required']);
@@ -92,12 +84,9 @@ class experiaController extends Controller
             'email' => $request->input('email'),
             'project' => $request->input('project'),
             'advisor' => $request->input('advisor'),
-            ]);
-        
-           // Log::info('I am being called' . $insight);
+        ]);
     
-            return $insight;
+        return $insight;
              
-        
-        }
+    }
 }

@@ -25,7 +25,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link page-scroll " href="index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll " href="/">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll"  href="about">Media Production</a>
@@ -79,7 +79,7 @@
             <p><b>CEO</b></p>
           </div>
           <div class="col-sm col-md-4">
-            <img class="img-fluid rounded-circle mag" src="img/men.jpg"  />
+            <img class="img-fluid rounded-circle mag" src="img/Men.jpg"  />
             <p><b>Cinematography Director</b></p>
           </div>
           <div class="col-sm col-md-4">

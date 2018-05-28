@@ -33,17 +33,6 @@ class RegisterController extends Controller
     protected $redirectTo = '/connected';
 
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        Log::info('being called');
-        $this->middleware('guest');
-    }
-
-    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data

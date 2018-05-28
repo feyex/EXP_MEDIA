@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,12 +12,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('index', 'experiaController@home');
+Route::get('/', 'experiaController@home');
 Route::get('/about', 'experiaController@about');
 Route::get('insight', 'experiaController@insight');
 Route::get('/creative', 'experiaController@creative');
@@ -24,20 +20,19 @@ Route::post('/creat', 'experiaController@save');
 Route::get('/programs', 'experiaController@program');
 Route::post('/ins', 'InsightController@ins');
 Route::get('/discovered', 'experiaController@discovered');
-//Auth::routes('http://localhost:8000/login');
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('become', 'BecomeController@index')->name('become');
+Route::post('become/original', 'BecomeController@store')->name('become.store');
 
-Route::get('/redirect', 'FacebookController@redirect');
-Route::get('/callback', 'FacebookController@callback');
+Auth::routes('/discover');
+Route::get('discover', 'DiscoverController@index')->name('discover');
+Route::get('/programs', 'experiaController@program')->name('programs');
+Route::get('logout', 'Auth\LoginController@logout');
 
 Route::get('/connected', 'HomeController@index')->name('getconnected');
 Route::post('/uploads', 'HomeController@uploadSubmit');
 
-Auth::routes('http://localhost:8000/discover');
-Route::get('/discover', 'DiscoverController@index')->name('discover');
-Route::get('/programs', 'experiaController@program')->name('programs');
-Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
 //for facebook login
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
