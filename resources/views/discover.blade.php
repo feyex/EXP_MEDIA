@@ -71,8 +71,6 @@
                 <div class="cta">Sign Up</div>
                   <form method="POST" action="{{ route('register') }}" class=" a form hidden">
                         @csrf
-                 
-                    <!-- echo '<script type="text/javascript">alert("Please Try Again")</script>' ; -->
                     <div class="form-row text-center">
                       <div class="col">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>

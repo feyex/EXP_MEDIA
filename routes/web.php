@@ -32,6 +32,7 @@ Route::get('/redirect', 'FacebookController@redirect');
 Route::get('/callback', 'FacebookController@callback');
 
 Route::get('/connected', 'HomeController@index')->name('getconnected');
+Route::post('/uploads', 'HomeController@uploadSubmit');
 
 Auth::routes('http://localhost:8000/discover');
 Route::get('/discover', 'DiscoverController@index')->name('discover');
@@ -40,3 +41,13 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 //for facebook login
 Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
+//Route for getconnected picture upload
+Route::get('/uploads', 'ConnectedCtrl@uploadForm');
+Route::post('/uploads', 'ConnectedCtrl@uploadSubmit');
+
+//Route for become professional
+Auth::routes('http://localhost:8000/professional');
+Route::get('/professional', 'ProffesionalCtrl@index')->name('professional');
+Route::get('/programs', 'experiaController@program')->name('programs');
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logouts');

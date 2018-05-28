@@ -35,6 +35,8 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return void
      */
+    
+    // TO REDIRECT A USER TO A PARTICULAR PAGE
     protected function unauthenticated($request, AuthenticationException $exception)
     {
     return $request->expectsJson()

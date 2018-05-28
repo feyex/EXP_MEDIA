@@ -43,7 +43,7 @@ a.active {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   font-family: "FiraSans";
   background-color: black;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 .navbar-custom .navbar-toggle {
   color: black;
@@ -99,7 +99,7 @@ a.active {
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
   }
   .navbar-custom.top-nav-collapse {
-    padding: 10px;
+    padding: 10x;
     background: black;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
@@ -364,6 +364,28 @@ font-family: 'FiraSans';
   text-align: center;
   padding-top: 30rem;
 }
+
+.professional {
+  background-image: url(../img/pro.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  padding-top: 27rem;
+}
+
+/* .professional .opacity{
+  background: rgba(0, 0, 0, 0.8); 
+  width: 100%;
+  position: absolute;
+  top:0;
+  height:100px;
+  
+}*/
 
 .facebook{
   margin-top:7px;

@@ -88,7 +88,7 @@
             <hr class="rul"/>
             <p>Connect with other professionals in the industry now and bring your project to life.<br>Browse and connect immediately with seasoned pros who are interested in learning about your project and who can strategically advise you on creative/market needs, and overall career direction</p>
             <center>
-              <input class="nb" type="button" value="Login/SignUp">
+            <a href="professional"><input class="nb" type="button" value="Login/SignUp" ></a>
             </center>
           </div>    
         </section>

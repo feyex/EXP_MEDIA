@@ -30,7 +30,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/discover';
-
+    protected $redirectsTo = '/professional';
     /**
      * Create a new controller instance.
      *
@@ -41,10 +41,17 @@ class LoginController extends Controller
         return redirect('/discover');
       }
 
+      public function logouts(Request $request) {
+        Auth::logout();
+        return redirect('/professional');
+      }
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logouts');
     }
+
 
     public function redirectToProvider()
     {

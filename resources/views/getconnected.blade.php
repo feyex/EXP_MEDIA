@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
  <head>
@@ -7,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
     <script src="vendor/fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style1.css">
-    <link rel="stylesheet" type="text/css" href="css/sign.css">
  </head>
  <body id="page-top" class="index">
     <!--Navigation-->
@@ -21,7 +19,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link page-scroll " href="getconnected">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link page-scroll " href="connected"><b> Welcome  {{ Auth::user()->name }}</b><span class="sr-only">(current)</span></a>
               </li>
               
               <li>
@@ -38,88 +36,122 @@
     </nav>
 
     
-        <section class="discover content-section">
-          <div class="container">
-            
-          </div>
-        </section>
-        <div class="container">
-                  <!-- Authentication Links -->
-                  @guest
-                      <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
-                      
-                  @else
-                  <!-- <div class="card">
-                     <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div>
-                  </div>
-                              -->
-                 
-          </div>
+    <section class="discover content-section">
+      <div class="container">
+        
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+                <!-- Authentication Links -->
+                @guest
+                    <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
+                @else
+      </div>
 
-          <div class="container">
-              <div class="row justify-content-center">
-                  <div class="col-md-8">
-                      <div class="card">
-                          <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div>
-                          @endguest
-                          <div class="card-body">
-                              @if (session('status'))
-                                  <div class="alert alert-success">
-                                      {{ session('status') }}
-                                  </div>
-                              @endif
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-8 content-section">
+              <!-- To display error messages -->
+                  @foreach($errors->all(':message') as $message)
+                      <div id="form-messages" class="alert alert-danger text-center text-dark" role="alert">
+                      <h3> {{ $message }} </h3>
+                      </div>
+                  @endforeach()
+                  <div class="card">
+                      <!-- <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div> -->
+                      @endguest
+                      <div class="card-body">
+                          @if (session('status'))
+                              <div class="alert alert-success">
+                                  {{ session('status') }}
+                              </div>
+                          @endif
 
-                              You are logged in!
+                         {{ Form:: open(array('url' => '/uploads')) }}
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('Talent Type') }}</label>
+                            <div class="col-sm-8">
+                            {{ Form::select('talent', array('PUBLIC SPEAKING' => 'PUBLIC SPEAKING', 'ARTISAN ' => 'ARTISAN ','MUSIC' => 'MUSIC (composer/singer)', 'MODELS' =>'MODELS','ACTORS' =>'ACTORS','COMEDIAN' =>'COMEDIAN','DANCERS' =>'DANCERS','VOICE-OVER' =>'VOICE-OVER')) }}
+                            </div>
                           </div>
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('Name') }}</label>
+                            <div class="col-sm-8">
+                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('Username') }}</label>
+                            <div class="col-sm-8">
+                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="username" value="{{ old('name') }}" required autofocus>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('Phone_Number') }}</label>
+                            <div class="col-sm-8">
+                              <input id="name" type="number" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="phone"  required autofocus>
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('E-mail') }}</label>
+                            <div class="col-sm-8">
+                              <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                            @endif
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="name" class="col-sm-3 col-form-label">{{ __('Upload Photos/audio/video') }}</label>
+                            <div class="col-sm-8">
+                              <input type="file" class="form-control" name="photos" multiple />
+                            </div>
+                          </div>
+                          <center>
+                              <div>
+                               <input type="submit" name="submit" value="submit">
+                              </div>
+                            </center>
+                        </form>
                       </div>
                   </div>
               </div>
           </div>
-
-        <footer>
-            <nav class="navbar navbar-light text-center" style="background-color: black;">
-                <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-            </nav>
-        </footer>
-          
-        <!--MODAL CLASS -->
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content bg-secondary">
-              <div class="modal-header text-center">
-                <center> <h5 class="modal-title text-centre" id="exampleModalLongTitle">Contact Us</h5></center>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form role="form">
-                  <div class="form-group ">
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Subject">
-                  </div>
-                    <textarea class="form-control na" rows="3"></textarea>
-                  </div>
-                    <button type="button" class="btn btn-default">Send</button>
-                </form>
-              </div>
-          </div>
-        </div>
       </div>
-            
+    </section>
+
+    <footer>
+        <nav class="navbar navbar-light text-center" style="background-color: black;">
+            <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
+        </nav>
+    </footer>
           
-           <script type="text/javascript" >
-              window.FontAwesomeConfig = {
-                searchPseudoElements: true,
-              }
-          </script>
-          <script src="vendor/jquery.min.js"></script>
-          <script src="vendor/bootstrap/js/bootstrap.js"></script>
-          <script src="js/expieria.js"></script>
-        </body>
-      </html>
+    <script type="text/javascript" >
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true,
+      }
+  </script>
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.js"></script>
+  <script src="js/expieria.js"></script>
+</body>
+</html>
