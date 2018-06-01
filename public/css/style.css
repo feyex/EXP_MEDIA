@@ -486,3 +486,17 @@ p {
   width: 70%;
   margin-left:-8rem;
 }
+
+#contact{
+  background-image: url(../img/cont.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom:3rem;
+}

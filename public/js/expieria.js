@@ -12,7 +12,7 @@ $(function() {
       }
       , 1500, "easeInOutExpo"), e.preventDefault()
   }
-  )
+  ) 
 });
 
 $( document ).ready(function() {

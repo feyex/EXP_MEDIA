@@ -29,8 +29,8 @@ class InsightController extends Controller
         
            // Log::info('I am being called' . $insight);
     
-           return redirect('/insight')->with('success', 'Thanks for contacting us!');
-             echo message;
+        return redirect('/insight')->with('success', 'Thanks for contacting us!');
+        echo message;
         
         }
 }

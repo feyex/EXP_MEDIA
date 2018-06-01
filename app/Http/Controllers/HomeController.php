@@ -29,76 +29,69 @@ class HomeController extends Controller
         return view('getconnected');
     }
 
-    public function uploadSubmit(Request $request)
-    
+    public function uploadSubmit(Request $request) 
     {
     
-    $this->validate($request, [
-    
-    'talent' => 'required',
-    'name' => 'required',
-    'username' => 'required',
-    'phone' => 'required',
-    'email' => 'required',
-    'photos'=>'required',
+        $this->validate($request, [
+            
+            'talent' => 'required',
+            'name' => 'required',
+            'username' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'photos'=>'required',
 
-    
-    ]);
-    
-  
-    // if($request->hasFile('photos'))
-    
-    // {
-    
-    //     $allowedfileExtension=['pdf','jpg','png','docx'];
+            
+            ]);
+            
         
-    //     $files = $request->file('photos');
-        
-    //     foreach($files as $file){
-        
-    //     $filename = $file->getClientOriginalName();
-        
-    //     $extension = $file->getClientOriginalExtension();
-        
-    //     $check=in_array($extension,$allowedfileExtension);
-        
-    // //dd($check);
-    
-    //     if($check)
-        
-    //     {
-    //         $items= Connected::create($request->all());
-        
-    //         foreach ($request->photos as $photo) {
-        
-    //         $filename = $photo->store('photos');
+            // if($request->hasFile('photos'))
+            
+            // {
+            
+            //     $allowedfileExtension=['pdf','jpg','png','docx'];
+                
+            //     $files = $request->file('photos');
+                
+            //     foreach($files as $file){
+                
+            //     $filename = $file->getClientOriginalName();
+                
+            //     $extension = $file->getClientOriginalExtension();
+                
+            //     $check=in_array($extension,$allowedfileExtension);
+                
+            // //dd($check);
+            
+            //     if($check)
+                
+            //     {
+            //         $items= Connected::create($request->all());
+                
+            //         foreach ($request->photos as $photo) {
+                
+            //         $filename = $photo->store('photos');
 
-                Log::info("I am working");
+        
 
-                 Connected::create([
+            Connected::create([
                 'talent' => $request->input('talent'),
                 'name' => $request->input('name'),
                 'username' => $request->input('username'),
                 'phone' => $request->input('phone'),
                 'email' => $request->input('email'),
-                ]);
+            ]);
 
-                if($request->hasFile('photos')){
-                    $image = $request->file('photos');
-                    $filename = time() . '.' . $image->getClientOriginalExtension();
-                    Connected::make($image)->resize(160, 160)->save( public_path() . '\\storage\\app\\photos'. $filename );
-                    $person->image = $filename;
+            if($request->hasFile('photos')) {
 
+                $image = $request->file('photos');
+                $filename = time() . '.' . $image->getClientOriginalExtension();
+                Connected::make($image)->resize(160, 160)->save( public_path() . '\\storage\\app\\photos'. $filename );
+                $person->image = $filename;
 
-                     echo "Upload Successfully";
-                };
-    }
-        
-    
-    
-   
-    
-   
+                    echo "Upload Successfully";
+            };
+    }  
     
     
 }

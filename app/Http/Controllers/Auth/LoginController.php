@@ -45,28 +45,22 @@ class LoginController extends Controller
             }
 
     }
-    
+
+
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function logouts(Request $request) {
-    Auth::logout();
-    return redirect('/professional');
+    public function logout() {
+        Auth::logout();
+        return redirect('/');
     }
 
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->middleware('guest')->except('logouts');
-    }
-    
-
-    public function logout() {
-
-        Auth::logout();
-        return redirect('/');
+       
     }
 
 

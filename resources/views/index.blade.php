@@ -42,7 +42,7 @@
               </li>
                   
               <li class="nav-item">
-                <a class="nav-link page-scroll "  data-toggle="modal" data-target="#exampleModalLong">Contact</a>
+                <a class="nav-link page-scroll"  href="#contact">Contact</a>
               </li>
           </ul>
         </div>
@@ -63,7 +63,8 @@
 
     <section id="about" class="content-section text-center">
         <div class="container ">
-          <h1 class="rule"><i>About Us</i></h1>
+          <h1 class=""><i>About Us</i></h1>
+          <hr class="rul"/>
           <p> EXPEIRIA is a networking platform for creators, projects and enablers for effective content development, production and distribution.We prime on developing unique story telling approach through creativity and innovation tailored to each project.</p>
           <p>  Our community programs aim at developing people with talents, innovations and skills in creating their dreams and ideas to meet the immediate society needs on a yearly basis. We focus on enlivening innate potentials of creative minds and to rejuvenate the potentials of professionals who have the development of the society in mind through coaching and mentorship to achieve greater result.We are committed to creating a community with high standard of integrity, clarity of vision, full transparency, opportunities and providing a wider range of knowledge sharing. </p>
         </div>
@@ -91,43 +92,82 @@
       </div>
     </section>
   
+    <section>
+        <div class="container content-section">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading"></h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+            </div>
+            <div class="row text-left">
+                <div class="col-md-6">
+                    <h4 class="service-heading text-center">Our Mission</h4>
+                    <hr class="rul"/>
+                    <p class="text-muted">Our mission is to nurture and develop talent, skills and innovations within the society by enlivening innate potentials of creative minds to achieve dreams and to rejuvenate the potentials of professionals who have the development of the society in mind for greater result.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4 class="service-heading text-center">Our Vision</h4>
+                    <hr class="rul"/>
+                    <p class="text-muted">Developing people with talents, innovations and skills in creating their dreams and ideas to meet the immediate society needs on a yearly basis and to be among the top platforms that support creativity across countries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- Contact Section -->
+<section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <h6 class="section-subheading text-blue">Send us a message today</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
       <footer>
           <nav class="navbar navbar-light " style="background-color: black;">
               <a class="navbar-brand text-white text-center" href="#">Copyright &copy;</a>	
           </nav>
       </footer>
-    
-  <!--MODAL CLASS -->
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content bg-secondary">
-              <div class="modal-header text-center">
-                <center> <h5 class="modal-title text-centre" id="exampleModalLongTitle">Contact Us</h5></center>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <form role="form">
-                  <div class="form-group ">
-                   <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Name">
-                  </div>
-                  <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                  </div>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Subject">
-                  </div>
-                    <textarea class="form-control na" rows="3"></textarea>
-                  </div>
-                    <button type="submit" class="btn btn-default">Send</button>
-                </form>
-              </div>
-          </div>
-        </div>
-      </div>
-      
-    
+        
      <script type="text/javascript" >
         window.FontAwesomeConfig = {
           searchPseudoElements: true,

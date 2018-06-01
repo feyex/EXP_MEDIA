@@ -30,7 +30,6 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/connected';
 
     /**
      * Get a validator for an incoming registration request.
@@ -39,8 +38,7 @@ class RegisterController extends Controller
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
-    {
-        Log::info('being called again');
+    {     
         return Validator::make($data, [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -55,9 +53,7 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    {
-        Log::info('being called again');
-        
+    { 
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

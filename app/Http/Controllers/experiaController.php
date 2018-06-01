@@ -39,6 +39,11 @@ class experiaController extends Controller
         return view('discovered');
     }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
     public function save(Request $request) {
 
         $this->validate($request, ['name' => 'required']);

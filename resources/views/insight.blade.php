@@ -117,33 +117,6 @@
           <div class="inquire1">
             <h5 class="cls text-center text-white"><b>INVESTMENT FORM </b></h5>
               
-              <!-- <form action=/ins method="post">
-                <input type="hidden" name="_/token" value="<?php //echo csrf_token(); ?>">
-                  <div class="form-row">
-                    <div class="col">
-                      <label class="col-form-label" for="formGroupExampleInput">Name</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="name">
-                    </div>
-                    <div class="col">
-                      <label class="col-form-label" for="formGroupExampleInput2">Email</label>
-                      <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="@email.com">
-                    </div>
-                  </div>
-                  <div class="form-row">
-                    <div class="col"> 
-                      <label class="col-form-label" for="formGroupExampleInput">Project</label>
-                      <input type="text" class="form-control" id="formGroupExampleInput" placeholder="documentary">
-                    </div>
-                    <div class="col">
-                      <label class="col-form-label" for="formGroupExampleInput2">Advisor</label>
-                      <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="kunle afolayan">
-                    </div>
-                  </div>
-                  <div class="cls">
-                    <input type="submit" value="submit">
-                  </div>
-              </form> -->
-
               <?php
                 echo Form::open(array('url' => '/ins'));
                   echo Form::label('Name');
