@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Proffesional;
+use App\Role;
 Use Log;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -25,11 +27,6 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
 
     /**
      * Get a validator for an incoming registration request.
@@ -46,6 +43,7 @@ class RegisterController extends Controller
         ]);
     }
 
+   
     /**
      * Create a new user instance after a valid registration.
      *
@@ -53,29 +51,47 @@ class RegisterController extends Controller
      * @return \App\User
      */
     protected function create(array $data)
-    { 
-        return User::create([
+    {   
+    
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+    
+
+        return $user;
+
     }
 
+
     /**
-     * Create a new user instance after a valid registration.
+     * Where to redirect users after registration.
      *
-     * @param  array  $data
-     * @return \App\Proffesional
+     * @var string
      */
-    protected function prof(array $data)
+     protected function registered(Request $request)
     {
-        Log::info('being called again');
-        
-        return Proffesional::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $currentPathName = $request->input('invisible');
+
+        switch ($currentPathName) {
+            
+            case 'discover':
+                # code...
+                return redirect('/connected');
+                break;
+            
+
+            case 'professional':
+                # code...
+                return redirect('/prof_info');
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
     }
 
 }

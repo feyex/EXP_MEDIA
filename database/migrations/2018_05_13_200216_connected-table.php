@@ -19,7 +19,7 @@ class ConnectedTable extends Migration
             $table->string('talent');
             $table->string('name');
             $table->string('username');
-            $table->int('phone');
+            $table->integer('phone');
             $table->string('email');
             $table->string('photos');
             $table->timestamps();

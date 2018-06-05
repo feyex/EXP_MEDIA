@@ -108,6 +108,7 @@
                           <label for="password-confirm" class="col-form-label text-center text-danger">{{ __('Confirm Password') }}</label>
                           <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
+                        {{ Form::hidden('invisible', 'discover') }}
                     </div>
                       &nbsp;
                       <div class="text-center ">
@@ -149,6 +150,7 @@
                       </span>
                   @endif
               </div>
+              {{ Form::hidden('invisible', $name) }}
             </div>
               &nbsp;
               <div class="text-center">

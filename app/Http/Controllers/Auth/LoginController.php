@@ -35,14 +35,28 @@ class LoginController extends Controller
     {
         $currentPathName = $request->input('invisible');
 
-        if ($currentPathName == 'discover') {
+         switch ($currentPathName) {
             
-            return redirect('/discover');
-        } else 
-            if ($currentPathName == 'become') {
-        
+            case 'discover':
+                # code...
+                return redirect('/connected');
+                break;
+            
+
+            case 'become':
+                # code...
                 return redirect('/become');
-            }
+                break;
+
+            case 'professional':
+                # code...
+                return redirect('/prof_info');
+                break;
+            
+            default:
+                # code...
+                break;
+        }
 
     }
 
@@ -54,7 +68,7 @@ class LoginController extends Controller
      */
     public function logout() {
         Auth::logout();
-        return redirect('/');
+        return redirect('/programs');
     }
 
     public function __construct()

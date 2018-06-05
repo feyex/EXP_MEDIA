@@ -16,10 +16,5 @@ class Getprof extends Model
         'category', 'past_project', 'project', 'talent',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
 
 }

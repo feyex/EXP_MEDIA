@@ -64,7 +64,7 @@
             <div class="row">
               <div class="optin-container col-sm col-md-6">
                 <div class="cta">Sign Up</div>
-                  <form method="POST" action='/prof' class=" a form hidden">
+                  <form method="POST" action="{{ route('register') }}" class=" a form hidden">
                         @csrf
                     <div class="form-row text-center">
                       <div class="col">
@@ -103,6 +103,7 @@
                           <label for="password-confirm" class="col-form-label text-center text-danger">{{ __('Confirm Password') }}</label>
                           <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                         </div>
+                        {{ Form::hidden('invisible', 'professional') }}
                     </div>
                       &nbsp;
                       <div class="text-center ">
@@ -136,6 +137,7 @@
                           </span>
                       @endif
                   </div>
+                   {{ Form::hidden('invisible', 'professional') }}
                 </div>
                   &nbsp;
                   <div class="text-center">

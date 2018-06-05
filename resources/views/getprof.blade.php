@@ -44,10 +44,10 @@
     
     <section>
       <div class="container">
-                <!-- Authentication Links -->
-                @guest
-                    <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
-                @else
+        <!-- Authentication Links -->
+        @guest
+            <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
+        @else
       </div>
 
       <div class="container">
@@ -68,7 +68,7 @@
                               </div>
                           @endif
 
-                         {{ Form:: open(array('url' => '/upload')) }}
+                         {{ Form:: open ( array('url' => '/areaofinterest')) }}
                           <div class="form-group row">
                               <label for="name" class="col-sm-3 col-form-label">{{ __('Talent Type') }}</label>
                             <div class="col-sm-8">

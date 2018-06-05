@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
- <head>
-  <title>EXPEIRIA MEDIA </title>
+  <head>
+    <title>EXPEIRIA MEDIA </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.css">
     <script src="vendor/fontawesome/svg-with-js/js/fontawesome-all.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style1.css">
- </head>
- <body id="page-top" class="index">
+  </head>
+  <body id="page-top" class="index">
+
     <!--Navigation-->
     <nav  class="navbar navbar-expand-lg fixed-top navbar-custom ">
       <div class="container text-white">
@@ -21,10 +22,10 @@
               <li class="nav-item active">
                 <a class="nav-link page-scroll " href="connected"><b> Welcome  {{ Auth::user()->name }}</b><span class="sr-only">(current)</span></a>
               </li>
-              
+
               <li>
                 <a class="nav-link page-scroll text-danger" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                   {{ __('Logout') }}
+                  {{ __('Logout') }}
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                   @csrf
@@ -35,123 +36,101 @@
       </div>
     </nav>
 
-    
+
     <section class="discover content-section">
       <div class="container">
-        
+
       </div>
     </section>
-    
+
     <section>
       <div class="container">
-                <!-- Authentication Links -->
-                @guest
-                    <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
-                @else
+        <!-- Authentication Links -->
+        @guest
+            <div><a href="{{ route('discover') }}">{{ __('Login') }}</a></div>
+        @else
       </div>
 
       <div class="container">
-          <div class="row justify-content-center">
-              <div class="col-md-8 content-section">
-              <!-- To display error messages -->
-                  @foreach($errors->all(':message') as $message)
-                      <div id="form-messages" class="alert alert-danger text-center text-dark" role="alert">
-                      <h3> {{ $message }} </h3>
-                      </div>
-                  @endforeach()
-                  <div class="card">
-                      <!-- <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div> -->
-                      @endguest
-                      <div class="card-body">
-                          @if (session('status'))
-                              <div class="alert alert-success">
-                                  {{ session('status') }}
-                              </div>
-                          @endif
-
-                         {{ Form:: open(array('url' => '/uploads')) }}
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('Talent Type') }}</label>
-                            <div class="col-sm-8">
-                            {{ Form::select('talent', array('PUBLIC SPEAKING' => 'PUBLIC SPEAKING', 'ARTISAN ' => 'ARTISAN ','MUSIC' => 'MUSIC (composer/singer)', 'MODELS' =>'MODELS','ACTORS' =>'ACTORS','COMEDIAN' =>'COMEDIAN','DANCERS' =>'DANCERS','VOICE-OVER' =>'VOICE-OVER')) }}
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('Name') }}</label>
-                            <div class="col-sm-8">
-                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('Username') }}</label>
-                            <div class="col-sm-8">
-                              <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="username" value="{{ old('name') }}" required autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('Phone_Number') }}</label>
-                            <div class="col-sm-8">
-                              <input id="name" type="number" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="phone"  required autofocus>
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('E-mail') }}</label>
-                            <div class="col-sm-8">
-                              <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="name" class="col-sm-3 col-form-label">{{ __('Upload Photos/audio/video') }}</label>
-                            <div class="col-sm-8">
-                              <input type="file" class="form-control" name="photos" multiple />
-                            </div>
-                          </div>
-                          <center>
-                              <div>
-                               <input type="submit" name="submit" value="submit">
-                              </div>
-                            </center>
-                        </form>
-                      </div>
-                  </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 content-section">
+            <!-- To display error messages -->
+            @foreach($errors->all(':message') as $message)
+              <div id="form-messages" class="alert alert-danger text-center text-dark" role="alert">
+              <h3> {{ $message }} </h3>
               </div>
+            @endforeach()
+            <div class="card">
+                <!-- <div class="card-header"><h3> Welcome  {{ Auth::user()->name }}</h3></div> -->
+                @endguest
+                <div class="card-body">
+                  @if (session('status'))
+                    <div class="alert alert-success">
+                      {{ session('status') }}
+                    </div>
+                  @endif
+
+                  {{ Form:: open(array('url' => '/uploads')) }}
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">{{ __('Talent Type') }}</label>
+                      <div class="col-sm-8">
+                      {{ Form::select('talent', array('PUBLIC SPEAKING' => 'PUBLIC SPEAKING', 'ARTISAN ' => 'ARTISAN ','MUSIC' => 'MUSIC (composer/singer)', 'MODELS' =>'MODELS','ACTORS' =>'ACTORS','COMEDIAN' =>'COMEDIAN','DANCERS' =>'DANCERS','VOICE-OVER' =>'VOICE-OVER')) }}
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">{{ __('Username') }}</label>
+                      <div class="col-sm-8">
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="username" value="{{ old('name') }}" required autofocus>
+                          @if ($errors->has('name'))
+                              <span class="invalid-feedback">
+                                  <strong>{{ $errors->first('name') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">{{ __('Phone_Number') }}</label>
+                      <div class="col-sm-8">
+                        <input id="name" type="number" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="phone"  required autofocus>
+                          @if ($errors->has('name'))
+                              <span class="invalid-feedback">
+                                  <strong>{{ $errors->first('name') }}</strong>
+                              </span>
+                          @endif
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="name" class="col-sm-3 col-form-label">{{ __('Upload Photos/audio/video') }}</label>
+                      <div class="col-sm-8">
+                        <input type="file" class="form-control" name="photos" multiple />
+                      </div>
+                    </div>
+                    <center>
+                        <div>
+                        <input type="submit" name="submit" value="submit">
+                        </div>
+                      </center>
+                  </form>
+                </div>
+            </div>
           </div>
+        </div>
       </div>
     </section>
 
     <footer>
-        <nav class="navbar navbar-light text-center" style="background-color: black;">
-            <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-        </nav>
+      <nav class="navbar navbar-light text-center" style="background-color: black;">
+          <a class="navbar-brand text-white" href="#">Copyright &copy;</a>
+      </nav>
     </footer>
-          
+
     <script type="text/javascript" >
       window.FontAwesomeConfig = {
         searchPseudoElements: true,
       }
-  </script>
-  <script src="vendor/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.js"></script>
-  <script src="js/expieria.js"></script>
-</body>
+    </script>
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="js/expieria.js"></script>
+  </body>
 </html>

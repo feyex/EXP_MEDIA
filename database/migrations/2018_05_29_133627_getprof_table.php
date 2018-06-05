@@ -14,7 +14,7 @@ class GetprofTable extends Migration
     public function up()
     {
         //
-        Schema::create('prof_info', function (Blueprint $table) {
+        Schema::create('getprofs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
             $table->string('past_project');

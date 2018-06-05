@@ -2,32 +2,51 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
+use App\Role;
+use App\Permission;
 use Illuminate\Http\Request;
-use\App\Connected;
+use  App\Connected;
 use Log;
 
 class ConnectedCtrl extends Controller
-{
-    //
-    public function uploadForm()
+{      
+     public function __construct()
     {
+        # code...
+        $this->middleware('auth');
+    }
+
+    //
+    public function index()
+    {       
+        $user = Auth::user();
+
+        $role = Role::where('name', 'role-user')->first();
+       
+        $permission = Permission::where('name', 'user')->first();
+        if (!$role->perms()->get()->contains('id', $permission->id)) {
+
+            $role->attachPermission($permission);
+        }  
+
+        if (!$user->hasRole('role-user')) {
+            
+            $user->attachRole($role);
+        }
+
         return view('getconnected');    
     }
     
-    public function uploadSubmit(Request $request)
+    public function store(Request $request)
     {
     
         $this->validate($request, [
             'talent' => 'required',
-            'name' => 'required',
             'username' => 'required',
             'phone' => 'required',
-            'email' => 'required',
             'photos'=>'required',        
         ]);
-    
-        Log::info("I am working");
-        Log::info('my name is ', array('context' => $request->all())); 
         
         if($request->hasFile('photos')) {
 
@@ -53,20 +72,21 @@ class ConnectedCtrl extends Controller
                 // $imagePath = $destinationPath. "/".  $name;
                 // $image->move($destinationPath, $name);
 
-                echo "Upload Successfully";
+                Storage::disk('local')->put($image, 'photos');
 
                 Connected::create([
                     'talent' => $request->input('talent'),
-                    'name' => $request->input('name'),
                     'username' => $request->input('username'),
                     'phone' => $request->input('phone'),
-                    'email' => $request->input('email'),
                 ]);
+
+                echo "Upload Successfully";
+
             }
             else {
                 echo '<div class="alert alert-warning"><strong>Warning!</strong> Sorry Only Upload png , jpg , doc</div>';
             }
-        };
+        }
     
     }
     
