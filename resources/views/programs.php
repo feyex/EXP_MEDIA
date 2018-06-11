@@ -99,7 +99,7 @@
             <hr class="rul"/>
             <p>Our program is designed to help numerous screenplays, books, concepts, reality shows, documentaries, and branded entertainment projects get set up with producers, sold, made or distributed. And the coolest part is that you only make the decision and sign agreement about the development of your projects to your satisfaction. You’re more likely to retain a higher degree of ownership</p>
             <center>
-              <a href="become" ><input  class="nb" type="button" value="Start Here"></a>
+              <a href="project" ><input  class="nb" type="button" value="Start Here"></a>
             </center>
           </div>    
         </section>

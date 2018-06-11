@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
 use Log;
+use Auth;
 use App\Role;
+use App\Getprof;
+use App\Project;
 use App\Permission;
 use Illuminate\Http\Request;
-use App\Getprof;
 
 class GetprofCtrl extends Controller
 {
@@ -35,7 +36,7 @@ class GetprofCtrl extends Controller
             $user->attachRole($role);
         }
 
-        return view('getprof');
+        return view('profile');
     }
 
 
@@ -56,5 +57,13 @@ class GetprofCtrl extends Controller
 
         return view('getprof');
 
+    }
+
+    public function viewprojects(Request $request)
+    {
+        //
+        $projects = Project::all()->all();
+
+        return view('projects')->with('projects' ,$projects);
     }
 }

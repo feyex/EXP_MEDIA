@@ -6,18 +6,18 @@ use Auth;
 use App\Role;
 use App\Permission;
 use Illuminate\Http\Request;
-use  App\Connected;
-use Log;
+use App\Connected;
+
 
 class ConnectedCtrl extends Controller
 {      
-     public function __construct()
+    //
+    public function __construct()
     {
         # code...
         $this->middleware('auth');
     }
 
-    //
     public function index()
     {       
         $user = Auth::user();
@@ -39,55 +39,33 @@ class ConnectedCtrl extends Controller
     }
     
     public function store(Request $request)
-    {
-    
-        $this->validate($request, [
-            'talent' => 'required',
-            'username' => 'required',
-            'phone' => 'required',
-            'photos'=>'required',        
-        ]);
-        
-        if($request->hasFile('photos')) {
+    {   
+        $userId = Auth::user()->id;
 
-            $this->validate($request, [
-                'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-              ]);          
+        $this->validate($request, ['talent' => 'required']);
+        $this->validate($request, ['username' => 'required']);
+        $this->validate($request, ['phone' => 'required']);
+        $this->validate($request, ['photo' => 'required']);
 
-            $allowedfileExtension = ['pdf','jpg','png','docx'];
-            $image = $request->file('photos');
+        $profile = new Connected();   
 
-            $extension = $image->getClientOriginalExtension();
-
-            $check = in_array($extension,$allowedfileExtension);
-
-            if ($check) {
-                # code...
-                
-                $filename = time() . '.' . $image->getClientOriginalExtension();
-                Connected::make($image)->resize(160, 160)->save( public_path() . '\\storage\\app\\photos'. $filename );
-                $person->image = $filename;
-
-                // $destinationPath = public_path('/storage/app/photos');
-                // $imagePath = $destinationPath. "/".  $name;
-                // $image->move($destinationPath, $name);
-
-                Storage::disk('local')->put($image, 'photos');
-
-                Connected::create([
-                    'talent' => $request->input('talent'),
-                    'username' => $request->input('username'),
-                    'phone' => $request->input('phone'),
-                ]);
-
-                echo "Upload Successfully";
-
-            }
-            else {
-                echo '<div class="alert alert-warning"><strong>Warning!</strong> Sorry Only Upload png , jpg , doc</div>';
-            }
+        if ($request->file('photo')) {
+            
+            $image = $request->file('photo');
+            $name = str_slug($request->input('username')) . '.' . $image->getClientOriginalExtension();
+            $destinationPath = public_path('/storage/photos');
+            // $imagePath = $destinationPath. "/".  $name;
+            $profile->photos =  $image->move($destinationPath, $name);
         }
-    
+
+        $profile->talent = $request->input('talent');
+        $profile->username = $request->input('username');
+        $profile->phone = $request->input('phone');
+        $profile->user_id = $userId;
+        
+        $profile->save();
+        echo "('success', 'Your article has been added successfully. Please wait for the admin to approve.')";
+
     }
     
 }

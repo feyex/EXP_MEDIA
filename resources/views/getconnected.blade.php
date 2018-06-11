@@ -70,7 +70,8 @@
                     </div>
                   @endif
 
-                  {{ Form:: open(array('url' => '/uploads')) }}
+                  <form enctype="multipart/form-data" method="POST" action="{{ url('/createprofile') }}">
+                    @csrf
                     <div class="form-group row">
                         <label for="name" class="col-sm-3 col-form-label">{{ __('Talent Type') }}</label>
                       <div class="col-sm-8">
@@ -102,7 +103,7 @@
                     <div class="form-group row">
                         <label for="name" class="col-sm-3 col-form-label">{{ __('Upload Photos/audio/video') }}</label>
                       <div class="col-sm-8">
-                        <input type="file" class="form-control" name="photos" multiple />
+                        <input type="file" class="form-control" name="photo"  />
                       </div>
                     </div>
                     <center>
@@ -110,6 +111,7 @@
                         <input type="submit" name="submit" value="submit">
                         </div>
                       </center>
+                     {{ Form:: close() }} 
                   </form>
                 </div>
             </div>

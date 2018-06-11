@@ -187,11 +187,11 @@
         </div>
     </section>
     
-      <footer>
-        <nav class="navbar navbar-light" style="background-color: black;">
-          <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-        </nav>
-      </footer>
+    <footer>
+      <nav class="navbar navbar-light" style="background-color: black;">
+        <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
+      </nav>
+    </footer>
 
      <!--MODAL CLASS -->
      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

@@ -48,6 +48,7 @@
         </div>
       </div>
     </nav>
+    
     <!-- Header -->
     <header>
       <div class="container">
@@ -70,7 +71,7 @@
         </div>
     </section>
 
-    <section class="insight content-section ">
+    <section class="insight content-section">
       <div class="container text-center">
         <h1 class="">Our Team</h1>
           <hr class="rul"/>
@@ -116,8 +117,8 @@
     </section>
 
 
-<!-- Contact Section -->
-<section id="contact">
+    <!-- Contact Section -->
+    <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">

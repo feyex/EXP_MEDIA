@@ -16,11 +16,11 @@ class ConnectedTable extends Migration
         //
         Schema::create('getconnected', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('talent');
-            $table->string('name');
             $table->string('username');
-            $table->integer('phone');
-            $table->string('email');
+            $table->string('phone');
             $table->string('photos');
             $table->timestamps();
         });

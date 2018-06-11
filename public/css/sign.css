@@ -56,9 +56,11 @@ form input[type="submit"] {
   padding: 0 3rem;
   transition: all 0.25s ease-in-out;
 }
+
 form input[type="submit"]:hover {
   background: linear-gradient(#ca093056, #d4062f5b);
 }
+
 @media screen and (max-width: 600px) {
   form {
     flex-flow: row wrap;
@@ -89,6 +91,7 @@ form input[type="submit"]:hover {
   text-decoration: none;
   width: 100%;
 }
+
 @media screen and (max-width: 600px) {
   .ctc {
     line-height: 1.4;
@@ -114,6 +117,7 @@ form input#c[type="submit"] {
   padding: 0 3rem;
   transition: all 0.25s ease-in-out;
 }
+
 form input#c[type="submit"]:hover {
   background: linear-gradient(hsla(248, 27%, 6%, 0.522), hsla(260, 43%, 1%, 0.281));
 }

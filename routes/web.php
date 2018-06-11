@@ -22,9 +22,9 @@ Route::post('/ins', 'InsightController@ins');
 Route::get('/discovered', 'experiaController@discovered');
 Route::get('/contact', 'experiaController@contact');
 
-// become original sign up
-Route::get('become', 'BecomeController@index')->name('become');
-Route::post('become/original', 'BecomeController@store')->name('become.store');
+// project original sign up
+Route::get('/project', 'ProjectsController@index')->name('project');
+Route::post('/project', 'ProjectsController@store')->middleware('auth');
 
 
 // Login and Sign up of get discovered 
@@ -42,8 +42,8 @@ Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 //Route for getconnected picture upload
-Route::get('/uploads', 'ConnectedCtrl@uploadForm');
-Route::post('/uploads', ['permissions' => 'user', 'uses' => 'ConnectedCtrl@store']);
+Route::get('/profile', 'ConnectedCtrl@profile');
+Route::post('/createprofile', ['permissions' => 'user', 'uses' => 'ConnectedCtrl@store']);
 
 //Route for become professional
 Auth::routes('/professional');
@@ -54,6 +54,6 @@ Route::get('/programs', 'experiaController@program')->name('programs');
 Route::get('logout', 'Auth\LoginController@logout');
 
 //Route for professional submission of data
-Route::get('/prof_info', 'GetprofCtrl@index')->name('getprof');
+Route::get('/profile', 'GetprofCtrl@index')->name('profile');
 Route::post('/areaofinterest', ['permissions' => 'professional', 'uses' => 'GetprofCtrl@areaofinterest']);
-// Route::get();
+Route::get('/projects', ['permissions' => 'professional', 'uses' => 'GetprofCtrl@viewprojects']);

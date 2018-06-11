@@ -43,14 +43,14 @@ class LoginController extends Controller
                 break;
             
 
-            case 'become':
+            case 'project':
                 # code...
-                return redirect('/become');
+                return redirect('/project');
                 break;
 
             case 'professional':
                 # code...
-                return redirect('/prof_info');
+                return redirect('/profile');
                 break;
             
             default:
