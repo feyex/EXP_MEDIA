@@ -440,3 +440,8 @@ textarea {
     background-color: #f8f8f8;
     resize: none;
 }
+
+.vl {
+    border-left: 2px solid #ce3d42;
+    height: 500px;
+}

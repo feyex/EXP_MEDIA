@@ -22,6 +22,8 @@ Route::post('/ins', 'InsightController@ins');
 Route::get('/discovered', 'experiaController@discovered');
 Route::get('/contact', 'experiaController@contact');
 
+Route::post('logout', 'Auth\LoginController@logout');
+
 // project original sign up
 Route::get('/project', 'ProjectsController@index')->name('project');
 Route::post('/project', 'ProjectsController@store')->middleware('auth');
@@ -29,10 +31,8 @@ Route::post('/project', 'ProjectsController@store')->middleware('auth');
 
 // Login and Sign up of get discovered 
 Auth::routes('/discover');
-
 Route::get('discover', 'DiscoverController@index')->name('discover');
 Route::get('/programs', 'experiaController@program')->name('programs');
-Route::post('logout', 'Auth\LoginController@logout');
 
 // after user login redirect here 
 Route::get('/connected', 'ConnectedCtrl@index')->name('getconnected');

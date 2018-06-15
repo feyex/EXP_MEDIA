@@ -18,7 +18,7 @@ class GetprofCtrl extends Controller
         $this->middleware('auth');
     }
 
-    //
+    //  
     public function index()
     {   
         $user = Auth::user();
@@ -62,7 +62,7 @@ class GetprofCtrl extends Controller
     public function viewprojects(Request $request)
     {
         //
-        $projects = Project::all()->all();
+        $projects = Project::with('user')->get();
 
         return view('projects')->with('projects' ,$projects);
     }

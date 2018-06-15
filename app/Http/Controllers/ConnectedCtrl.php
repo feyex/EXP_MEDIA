@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\User;
 use Auth;
 use App\Role;
 use App\Permission;
@@ -22,6 +24,9 @@ class ConnectedCtrl extends Controller
     {       
         $user = Auth::user();
 
+        $user_id = $user->id;
+
+        $profile = Connected::where('user_id', $user_id)->with('user')->first();
         $role = Role::where('name', 'role-user')->first();
        
         $permission = Permission::where('name', 'user')->first();
@@ -35,12 +40,13 @@ class ConnectedCtrl extends Controller
             $user->attachRole($role);
         }
 
-        return view('getconnected');    
+        return view('getconnected')->with('profile', $profile);    
     }
     
     public function store(Request $request)
     {   
-        $userId = Auth::user()->id;
+       	$userId = Auth::user()->id;
+        $user = User::findOrFail($userId)->first();
 
         $this->validate($request, ['talent' => 'required']);
         $this->validate($request, ['username' => 'required']);
@@ -55,16 +61,18 @@ class ConnectedCtrl extends Controller
             $name = str_slug($request->input('username')) . '.' . $image->getClientOriginalExtension();
             $destinationPath = public_path('/storage/photos');
             // $imagePath = $destinationPath. "/".  $name;
-            $profile->photos =  $image->move($destinationPath, $name);
+            $image->move($destinationPath, $name);
+            $profile->photos =   $name;
         }
+
 
         $profile->talent = $request->input('talent');
         $profile->username = $request->input('username');
         $profile->phone = $request->input('phone');
-        $profile->user_id = $userId;
         
-        $profile->save();
-        echo "('success', 'Your article has been added successfully. Please wait for the admin to approve.')";
+        $user->connected()->save($profile);
+
+      return view('getconnected')->with('profile', $profile);
 
     }
     

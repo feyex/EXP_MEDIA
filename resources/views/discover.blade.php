@@ -45,13 +45,36 @@
     </nav>
 
     
-    <section class="discover content-section">
+    <header class="discover content-section">
       <div class="container">
-        
+        <div class="row">
+          <div class="my-auto ml-auto">
+            <a class="btn btn-danger mr-2" href="#user" role="button">SignUp</a>
+            <a class="btn btn-danger ml-2" href="#user" role="button">Log In</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="content-section">
+      <div class="container">
+        <!-- Projects Row -->
+        <div class="row">
+          @foreach ($profiles as $profile)
+            <div class="col-md-3 img-portfolio">
+                <!-- <a href="portfolio-item.html"> -->
+                  <img class="img-fluid img-thumbnail img-hover" src="storage/photos/{{$profile->photos}}" alt="">
+                  <p>{{ $profile->username }}</p>
+                  <p>{{ $profile->talent }}</p>
+                <!-- </a> -->
+            </div>
+          @endforeach
+        </div>
+        <!-- /.row -->
       </div>
     </section>
 
-        <section class="content-section">
+    <section class="insight content-section" id="user">
           <div class="container">
             <h2 class="text-center">Showcase your talent</h2>
             <hr class="rul"/>
@@ -164,9 +187,9 @@
     </section>
 
     <footer>
-        <nav class="navbar navbar-light text-center" style="background-color: black;">
-            <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
-        </nav>
+      <nav class="navbar navbar-light text-center" style="background-color: black;">
+          <a class="navbar-brand text-white" href="#">Copyright &copy;</a>	
+      </nav>
     </footer>
           
     <!--MODAL CLASS -->

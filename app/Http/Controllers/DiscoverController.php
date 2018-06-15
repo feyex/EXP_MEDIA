@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Connected;
 use Illuminate\Http\Request;
 
 class DiscoverController extends Controller
@@ -13,6 +14,8 @@ class DiscoverController extends Controller
      */
     public function index()
     {
-        return view('discover')->with('name', 'discover');
+        $profiles = Connected::all();
+
+        return view('discover')->with('name', 'discover')->with('profiles', $profiles);
     }
 }
